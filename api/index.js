@@ -5,6 +5,7 @@ import router from '../api/routes/auth.routes.js'
 dotenv.config()
 const app=express()
 
+app.use(express.json())
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log("mongodb is connected")
@@ -18,3 +19,13 @@ app.listen(3000,()=>{
 })
 
 app.use('/api/user', router)
+
+app.use((err, req, res, next)=>{
+    const statusCode=err.statusCode || 500
+    const message=err.message || 'Internal server error'
+    res.status(statusCode).json({
+        success:false,
+        statusCode,
+        message
+    })
+})

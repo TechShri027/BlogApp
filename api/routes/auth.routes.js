@@ -1,9 +1,9 @@
 import { Router } from "express";
 import express from 'express'
+import { signup } from "../controllers/auth.controllers.js";
 const router=express.Router()
 
-router.get('/signup', (req, res)=>{
-    console.log('api is working')
-})
+
+router.post('/signup', signup)
 
 export default router;

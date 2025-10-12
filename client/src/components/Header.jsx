@@ -8,10 +8,10 @@ const Header = () => {
     const location=useLocation()
     const path=location.pathname;
   return (
-    <Navbar className='border-b-2  text-white h-20 pt-6'>
+    <Navbar className='border-b-2  dark:text-white h-20 pt-6'>
 <Link to='/' className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
 <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  rounded-lg text-white'>Web's Tech</span>
-Blogs
+Blog
 </Link>
 <form>
   <TextInput

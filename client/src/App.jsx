@@ -12,14 +12,14 @@ import { Flowbite } from 'flowbite-react';
 
 const customTheme = {
   navbar: {
-    base: 'bg-white text-black border-b-2', // 👈 yahan apna default color de
+    base: 'bg-white text-black border-b-2', 
   },
   button: {
     color: {
       primary: 'bg-indigo-600 text-white hover:bg-indigo-700',
     },
   },
-  // aur bhi components ka theme yahan set kar sakti hai
+ 
 };
 function App() {
   
@@ -30,11 +30,11 @@ function App() {
    <Header/>
    <Routes>
     <Route path='/' element={<Home/>}/>
-    <Route path='about' element={<About/>}/>
-    <Route path='dashboard' element={<Dashboard/>}/>
-    <Route path='signup' element={<Signup/>}/>
-    <Route path='signin' element={<Signin/>}/>
-    <Route path='project' element={<Project/>}/>
+    <Route path='/about' element={<About/>}/>
+    <Route path='/dashboard' element={<Dashboard/>}/>
+    <Route path='/signup' element={<Signup/>}/>
+    <Route path='/signin' element={<Signin/>}/>
+    <Route path='/project' element={<Project/>}/>
    </Routes>
    </BrowserRouter>
     </div>

@@ -9,7 +9,7 @@ const Header = () => {
     const path=location.pathname;
   return (
     <Navbar className='border-b-2  dark:text-white h-20 pt-6'>
-<Link to='/' className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
+<Link to='/' className='self-center whitespace-nowrap text-[20px] sm:text-[25px] font-semibold dark:text-white'>
 <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  rounded-lg text-white'>Web's Tech</span>
 Blog
 </Link>
@@ -18,7 +18,7 @@ Blog
   type='text'
   placeholder='Search...'
   rightIcon={BsSearchHeart}
-  className='hidden lg:inline'
+  className='hidden lg:inline text-[20px] sm:text-[25px]'
   />
 </form>
 <Button className='bg-white  lg:hidden' color='gray' >
@@ -30,7 +30,7 @@ Blog
     <FaMoon/>
 </Button>
 <Link to='/signin'>
-<Button gradientDuoTone='purpleToBlue' outline>
+<Button gradientDuoTone='purpleToBlue' outline className='text-[15px]'>
     SignIn
 </Button>
 </Link>
@@ -38,13 +38,13 @@ Blog
 </div>
 <NavbarCollapse>
     <NavbarLink active={path==='/'} as={'div'}>
-        <Link to='/'>Home</Link>
+        <Link to='/' className='text-[15px]'>Home</Link>
     </NavbarLink>
      <NavbarLink active={path==='/about'} as={'div'}>
-        <Link to='/about'>About</Link>
+        <Link to='/about' className='text-[15px]'>About</Link>
     </NavbarLink>
      <NavbarLink active={path==='/project'} as={'div'}>
-        <Link to='/project'>Projects</Link>
+        <Link to='/project' className='text-[15px]'>Projects</Link>
     </NavbarLink>
 
 </NavbarCollapse>

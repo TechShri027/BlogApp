@@ -1,10 +1,10 @@
-
 import React from 'react'
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
+import PrivateRoute from './components/PrivateRoute'
 import Signup from './pages/Signup'
 import Signin from './pages/Signin'
 import Footer from './components/Footer'
@@ -32,7 +32,7 @@ function App() {
    <Routes>
     <Route path='/' element={<Home/>}/>
     <Route path='/about' element={<About/>}/>
-    <Route path='/dashboard' element={<Dashboard/>}/>
+    <Route element={<PrivateRoute/>}> <Route path='/dashboard' element={<Dashboard/>}/></Route>
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/signin' element={<Signin/>}/>
     <Route path='/project' element={<Project/>}/>

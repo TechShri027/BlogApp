@@ -4,6 +4,7 @@ import { Label, Button } from 'flowbite-react'
 import { Link ,useNavigate} from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice'
+import Oauth from '../components/Oauth'
 const Signin = () => {
   const [formData, setFormData]=useState("")
   // const [errorMessage, setErrorMessage]=useState(null)
@@ -88,6 +89,7 @@ Blog
   {loading? (<><Spinner size={"sm"} className='mr-2'></Spinner>
   <span className='pt-1'>loading...</span></>): 'Sign In'}
   </Button>
+  <Oauth/>
 </form>
 <div className='flex gap-2 text-[20px] mt-5'>
 <span>Don't have an account?</span>

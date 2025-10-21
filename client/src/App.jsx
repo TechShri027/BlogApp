@@ -7,6 +7,7 @@ import About from './pages/About'
 import Dashboard from './pages/Dashboard'
 import Signup from './pages/Signup'
 import Signin from './pages/Signin'
+import Footer from './components/Footer'
 import Project from './pages/Project'
 import { Flowbite } from 'flowbite-react';
 
@@ -36,6 +37,7 @@ function App() {
     <Route path='/signin' element={<Signin/>}/>
     <Route path='/project' element={<Project/>}/>
    </Routes>
+   <Footer/>
    </BrowserRouter>
     </div>
    

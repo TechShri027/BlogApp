@@ -2,6 +2,7 @@ import { Alert, Spinner, TextInput } from 'flowbite-react'
 import React, { useState } from 'react'
 import { Label, Button } from 'flowbite-react'
 import { Link ,useNavigate} from 'react-router-dom'
+import Oauth from '../components/Oauth'
 const Signup = () => {
   const [formData, setFormData]=useState("")
   const [errorMessage, setErrorMessage]=useState(null)
@@ -88,6 +89,7 @@ Blog
   {loading? (<><Spinner size={"sm"} className='mr-2'></Spinner>
   <span className='pt-1'>loading...</span></>): 'Sign Up'}
   </Button>
+  <Oauth/>
 </form>
 <div className='flex gap-2 text-[20px] mt-5'>
 <span>have an account?</span>

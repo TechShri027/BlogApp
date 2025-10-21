@@ -18,11 +18,17 @@ if(tabFromUrl){
     <Sidebar className='w-full md:w-56'>
         <SidebarItems>
             <SidebarItemGroup>
-                <Link to='/dashboard?tab==profile'>
-                <SidebarItem active={tab==='profile'} icon={HiUser} label={'User'} labelColor='dark'>
-Profile
-                </SidebarItem>
-                </Link>
+            <Sidebar.Item
+            as={Link}
+            to="/dashboard?tab=profile"
+            icon={HiUser}
+            active={tab === "profile"}
+            label="User"
+            labelColor="dark"
+          >
+            Profile
+          </Sidebar.Item>
+               
                 <SidebarItem active icon={HiArrowSmRight} className='cursor-pointer'>
 Sign Out
                 </SidebarItem>

@@ -60,6 +60,7 @@ export const google=async(req,res, next)=>{
       const user=await User.findOne({email});
    if(user){
       const token=jwt.sign({id:user._id},process.env.JWT_SECRET);
+      user.profilePicture = googlePhotoUrl || user.profilePicture;
       const {password, ...rest}=user._doc;
       res.status(200).cookie('access_token', token,{
          httpOnly:true,
@@ -87,7 +88,7 @@ res
    } catch (error) {
       console.log("Google Auth Error:", error);
       next(error)
-  res.status(500).json({ success: false, message: error.message });
+ 
 
    }
 }

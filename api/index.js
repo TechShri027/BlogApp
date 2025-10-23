@@ -1,8 +1,10 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import router from '../api/routes/auth.routes.js'
+import authRoutes from '../api/routes/auth.routes.js'
+import userRoutes from './routes/user.route.js'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 dotenv.config()
 const app=express()
 app.use(cors({
@@ -17,12 +19,13 @@ mongoose.connect(process.env.MONGO_URL)
     console.log("failed to connected mongodb:",error)
 })
 
-
+app.use(cookieParser())
 app.listen(3000,()=>{
     console.log('app is running on 3000')
 })
 
-app.use('/api/user', router)
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
 
 app.use((err, req, res, next)=>{
     const statusCode=err.statusCode || 500
